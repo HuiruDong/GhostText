@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>透明文字显示工具</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>透明文字显示</h1>
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">启用显示</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="textInput">显示文字：</label>
+      <textarea id="textInput" placeholder="请输入要显示的文字..." rows="3"></textarea>
+    </div>
+
+    <div class="settings-grid">
+      <div class="form-group">
+        <label for="opacity">透明度：</label>
+        <input type="range" id="opacity" min="0.1" max="1" step="0.1" value="0.5">
+        <span id="opacityValue">0.5</span>
+      </div>
+
+      <div class="form-group">
+        <label for="fontSize">字体大小：</label>
+        <input type="range" id="fontSize" min="12" max="24" step="1" value="16">
+        <span id="fontSizeValue">16px</span>
+      </div>
+
+      <div class="form-group">
+        <label for="textColor">文字颜色：</label>
+        <input type="color" id="textColor" value="#333333">
+      </div>
+
+      <div class="form-group">
+        <label for="position">显示位置：</label>
+        <select id="position">
+          <option value="top-right">右上角</option>
+          <option value="top-left">左上角</option>
+          <option value="bottom-right">右下角</option>
+          <option value="bottom-left">左下角</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="preview-section">
+      <label>实时预览：</label>
+      <div id="preview" class="preview-box">这里是预览效果</div>
+    </div>
+
+    <div class="button-group">
+      <button id="saveBtn" class="btn btn-primary">保存设置</button>
+      <button id="clearBtn" class="btn btn-secondary">清空文字</button>
+    </div>
+
+    <div class="shortcut-info">
+      <small>快捷键：Ctrl+Shift+T 切换显示</small>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

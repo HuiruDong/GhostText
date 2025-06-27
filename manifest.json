@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "GhostText",
+  "description": "在网页右上角显示透明文字，不影响正常操作",
+  "version": "1.0.0",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "透明文字显示工具"
+  },
+  "commands": {
+    "toggle-display": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+T"
+      },
+      "description": "切换文字显示状态"
+    }
+  }
+}

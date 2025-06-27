@@ -1,0 +1,85 @@
+.text-overlay-extension {
+  position: fixed !important;
+  z-index: 2147483647 !important; /* 最高层级 */
+  pointer-events: none !important; /* 允许点击穿透 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  max-width: 300px !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+/* 不同位置的样式 */
+.text-overlay-extension.position-top-right {
+  top: 20px !important;
+  right: 20px !important;
+}
+
+.text-overlay-extension.position-top-left {
+  top: 20px !important;
+  left: 20px !important;
+}
+
+.text-overlay-extension.position-bottom-right {
+  bottom: 20px !important;
+  right: 20px !important;
+}
+
+.text-overlay-extension.position-bottom-left {
+  bottom: 20px !important;
+  left: 20px !important;
+}
+
+/* 隐藏状态 */
+.text-overlay-extension.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 防止与网页样式冲突 */
+.text-overlay-extension * {
+  all: unset !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .text-overlay-extension {
+    max-width: 200px !important;
+    font-size: 14px !important;
+    padding: 6px 10px !important;
+  }
+  
+  .text-overlay-extension.position-top-right,
+  .text-overlay-extension.position-bottom-right {
+    right: 10px !important;
+  }
+  
+  .text-overlay-extension.position-top-left,
+  .text-overlay-extension.position-bottom-left {
+    left: 10px !important;
+  }
+  
+  .text-overlay-extension.position-top-right,
+  .text-overlay-extension.position-top-left {
+    top: 10px !important;
+  }
+  
+  .text-overlay-extension.position-bottom-right,
+  .text-overlay-extension.position-bottom-left {
+    bottom: 10px !important;
+  }
+}
